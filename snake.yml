@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snake
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snake
+  template:
+    metadata:
+      labels:
+        app: snake
+    spec:
+      containers:
+      - name: snake
+        image: dockersubodh/snake:latest
+        ports:
+          - name: http-port
+            containerPort: 3000 
+
